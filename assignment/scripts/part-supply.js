@@ -28,7 +28,7 @@ console.log('Second supplyChange is:', supplyChanges[1]);
 //    array & console.log the value removed.
 console.log('4. Removed item:');
 
-supplyChanges.splice(1,1);
+supplyChanges.pop();
 console.log(supplyChanges);
 //use .splice or .pop
 
@@ -45,18 +45,18 @@ console.log(supplyChanges);
 //    - if the value is negative, format the log as 'Removed x parts.' 
 console.log('6. Showing supplyChanges...');
 
-x = [ 3, 5, -6, 0, 7, 11 ];
+supplyChanges  = [ 3, 5, -6, 0, 7, 11 ];
 
-for (let x=0; x < supplyChanges.length; x++) { 
-    console.log(supplyChanges[x]); 
-
-    if (x >= 1) { 
-    console.log('Added x parts:'); 
-}   else if ( x === 0) {   
-    console.log( 'No Change'); 
-}   else if ( x < 0 ) { 
-    console.log( 'Removed x parts:'); 
-}
+for (x= 0; x<supplyChanges.length; x++)   
+     {  
+    if (supplyChanges[x] > 0) {
+    console.log('Added ', supplyChanges[x], 'parts');
+}   else if (supplyChanges[x] === 0) {
+    console.log('No Change', supplyChanges[x], 'parts');
+}   else if (supplyChanges[x] < 0 ) {
+    console.log('Removed', supplyChanges[x], 'parts');
+    }
+    }
 
 
 
@@ -73,6 +73,11 @@ console.log('7. Showing supplyChanges with "for of" loop');
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('8. Total supplies available is:');
 
+let sum = supplyChanges.reduce( function (a,b){ 
+    return a + b; }, 0);
+    console.log(sum);
+
+    
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. 
 //    There are 572 parts in total, and each box holds 7 parts.
