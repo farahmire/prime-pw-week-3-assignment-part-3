@@ -27,9 +27,9 @@ console.log('Second supplyChange is:', supplyChanges[1]);
 // 4. The last item was added by mistake. Remove it from the 'supplyChanges' 
 //    array & console.log the value removed.
 console.log('4. Removed item:');
-
+let removed =11
 supplyChanges.pop();
-console.log(supplyChanges);
+console.log(removed);
 //use .splice or .pop
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
